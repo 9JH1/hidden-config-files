@@ -1,0 +1,16 @@
+
+[window]
+decorations="none"
+startup_mode = "Windowed"
+[window.padding]
+y=0
+x=0
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+[font] 
+size = 8
+
+[font.normal] 
+family='Terminus'
