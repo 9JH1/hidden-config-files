@@ -11,4 +11,4 @@ foreground = "#ffffff"
 size = 8
 
 [font.normal] 
-family='Terminus'
+family='Hack'
