@@ -5,7 +5,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 for_window [window_role="alert"] floating enable
-# i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -24,7 +23,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id picom -b
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
-
+exec --no-startup-id libinput-gestures-setup start
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -51,7 +50,7 @@ tiling_drag modifier titlebar
 bindsym $mod+x exec i3lock -i 000000
 # start a terminal
 bindsym $mod+Return exec alacritty  --config-file "/home/_3hy/Documents/al_config.toml"
-
+bindsym $mod+Shift+Return exec alacritty --config-file "/home/_3hy/Documents/al_config_hack.toml"
 # kill focused window
 bindsym $mod+q kill
 
@@ -195,10 +194,12 @@ bar {
     urgent_workspace #000000 #000000 #ffffff #ffffff
   }
 }
-client.focused #000000  #000000 #ffffff #ffffff
+client.focused #000000  #000000   #ffffff #ffffff
 client.focused_inactive #000000 #000000  #ffffff #ffffff
 client.unfocused #000000  #000000  #ffffff  #ffffff
 client.urgent #2f343a #900000 #ffffff #900000
 
 
-gaps inner 5
+gaps inner 10
+gaps outer 10
+exec_always --no-startup-id xinput set-prop 9 319 0
